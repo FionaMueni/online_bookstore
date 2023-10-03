@@ -1,3 +1,31 @@
+        // Function to toggle search and browse buttons
+    function toggleButtons() {
+        const searchButton = document.getElementById("searchButton");
+        const browseButtons = document.getElementById("browseButtons");
+
+        // Check if the search input field is empty
+        const searchInput = document.querySelector('input[type="search"]');
+        if (searchInput && searchInput.value.trim() !== "") {
+            // Hide the browse buttons and show the search button
+            browseButtons.style.display = "none";
+            searchButton.style.display = "block";
+        } else {
+            // Show the browse buttons and hide the search button
+            browseButtons.style.display = "block";
+            searchButton.style.display = "none";
+        }
+    }
+
+    // Add an event listener to the search input
+    const searchInput = document.querySelector('input[type="search"]');
+    if (searchInput) {
+        searchInput.addEventListener("input", toggleButtons);
+    }
+
+    // Initial toggle on page load
+    toggleButtons();
+     
+     
      // Book data array
      const books = [];
 
